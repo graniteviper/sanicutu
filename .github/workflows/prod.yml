@@ -10,5 +10,5 @@ jobs:
         steps:
             - run: |
                 echo "${{secrets.SSH_PRIVATE_KEY_GCP}}" &> ~/ssh_key
-                chmod 7000 ~/ssh_key
+                chmod 700 home/runner/ssh_key
                 ssh -i ~/ssh_key -o StrictHostKeyChecking=no tanishq@34.10.32.117 -t "sudo docker stop main-app && sudo docker rm main-app && sudo docker run --name main-app -p 5173:5173 -d graniteviper/apple:latest"
