@@ -11,5 +11,8 @@ export default defineConfig({
 
   build: {
     sourcemap: true
+  },
+  server:{
+    allowedHosts: ['apple.tandev-stage.fun']
   }
 })
